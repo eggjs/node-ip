@@ -1,6 +1,19 @@
-# IP
+# @eggjs/ip
 
-[![](https://badge.fury.io/js/@eggjs/ip.svg)](https://www.npmjs.com/package/@eggjs/ip)  
+[![NPM version][npm-image]][npm-url]
+[![Node.js CI](https://github.com/eggjs/node-ip/actions/workflows/nodejs.yml/badge.svg)](https://github.com/eggjs/node-ip/actions/workflows/nodejs.yml)
+[![Test coverage][codecov-image]][codecov-url]
+[![Known Vulnerabilities][snyk-image]][snyk-url]
+[![npm download][download-image]][download-url]
+
+[npm-image]: https://img.shields.io/npm/v/@eggjs/ip.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/@eggjs/ip
+[codecov-image]: https://codecov.io/gh/eggjs/node-ip/branch/master/graph/badge.svg
+[codecov-url]: https://codecov.io/gh/eggjs/node-ip
+[snyk-image]: https://snyk.io/test/npm/@eggjs/ip/badge.svg?style=flat-square
+[snyk-url]: https://snyk.io/test/npm/@eggjs/ip
+[download-image]: https://img.shields.io/npm/dm/@eggjs/ip.svg?style=flat-square
+[download-url]: https://npmjs.org/package/@eggjs/ip
 
 IP address utilities for node.js
 
@@ -11,7 +24,7 @@ Security fix fork, merge https://github.com/indutny/node-ip/pull/144
 ### npm
 
 ```shell
-npm install ip
+npm install @eggjs/ip
 ```
   
 ## Usage
@@ -19,7 +32,7 @@ npm install ip
 Get your ip address, compare ip addresses, validate ip addresses, etc.
 
 ```js
-var ip = require('ip');
+var ip = require('@eggjs/ip');
 
 ip.address() // my ip address
 ip.isEqual('::1', '::0:1'); // true
