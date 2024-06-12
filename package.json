@@ -19,13 +19,14 @@
   ],
   "main": "lib/ip",
   "devDependencies": {
-    "eslint": "^8.15.0",
-    "mocha": "^10.0.0"
+    "egg-bin": "^6.10.0",
+    "eslint": "^8.15.0"
   },
   "scripts": {
-    "lint": "eslint lib/*.js test/*.js",
-    "test": "npm run lint && mocha --reporter spec test/*-test.js",
-    "fix": "npm run lint -- --fix"
+    "lint": "eslint lib test",
+    "test": "npm run lint && egg-bin test --ts false",
+    "fix": "npm run lint -- --fix",
+    "ci": "npm run lint && egg-bin cov --ts false"
   },
   "license": "MIT"
 }
