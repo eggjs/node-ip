@@ -418,7 +418,7 @@ describe('IP library for node.js', () => {
   describe('address() method', () => {
     describe('undefined', () => {
       it('should respond with a private ip', () => {
-        assert.ok(ip.isPrivate(ip.address()));
+        assert.ok(ip.isPrivate(ip.address()), `${ip.address()} should be private`);
       });
     });
 
@@ -426,7 +426,7 @@ describe('IP library for node.js', () => {
       [undefined, 'ipv4', 'ipv6'].forEach((family) => {
         describe(family || 'undefined', () => {
           it('should respond with a private ip', () => {
-            assert.ok(ip.isPrivate(ip.address('private', family)));
+            assert.ok(ip.isPrivate(ip.address('private', family)), `${ip.address('private', family)} should be private`);
           });
         });
       });
