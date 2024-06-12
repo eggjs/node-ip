@@ -11,7 +11,7 @@
   "homepage": "https://github.com/eggjs/node-ip",
   "repository": {
     "type": "git",
-    "url": "http://github.com/eggjs/node-ip.git"
+    "url": "git://github.com/eggjs/node-ip.git"
   },
   "files": [
     "lib",
