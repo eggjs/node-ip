@@ -1,11 +1,11 @@
 {
-  "name": "ip",
+  "name": "@eggjs/ip",
   "version": "2.0.1",
   "author": "Fedor Indutny <fedor@indutny.com>",
-  "homepage": "https://github.com/indutny/node-ip",
+  "homepage": "https://github.com/eggjs/node-ip",
   "repository": {
     "type": "git",
-    "url": "http://github.com/indutny/node-ip.git"
+    "url": "http://github.com/eggjs/node-ip.git"
   },
   "files": [
     "lib",

@@ -1,22 +1,21 @@
-# IP  
-[![](https://badge.fury.io/js/ip.svg)](https://www.npmjs.com/package/ip)  
+# IP
+
+[![](https://badge.fury.io/js/@eggjs/ip.svg)](https://www.npmjs.com/package/@eggjs/ip)  
 
 IP address utilities for node.js
 
+Security fix fork, merge https://github.com/indutny/node-ip/pull/144
+
 ## Installation
 
-###  npm
+### npm
+
 ```shell
 npm install ip
 ```
-
-### git
-
-```shell
-git clone https://github.com/indutny/node-ip.git
-```
   
 ## Usage
+
 Get your ip address, compare ip addresses, validate ip addresses, etc.
 
 ```js
@@ -34,6 +33,7 @@ ip.or('192.168.1.134', '0.0.0.255') // 192.168.1.255
 ip.isPrivate('127.0.0.1') // true
 ip.isV4Format('127.0.0.1'); // true
 ip.isV6Format('::ffff:127.0.0.1'); // true
+ip.isValid('127.0.0.1'); // true
 
 // operate on buffers in-place
 var buf = new Buffer(128);
@@ -58,16 +58,25 @@ ip.cidrSubnet('192.168.1.134/26')
 // range checking
 ip.cidrSubnet('192.168.1.134/26').contains('192.168.1.190') // true
 
-
 // ipv4 long conversion
 ip.toLong('127.0.0.1'); // 2130706433
 ip.fromLong(2130706433); // '127.0.0.1'
+
+// malformed addresses and normalization
+ip.normalizeStrict('0::01'); // '::1'
+ip.isPrivate('0x7f.1'); // throw error
+ip.isValidAndPrivate('0x7f.1'); // false
+ip.normalizeStrict('0x7f.1'); // throw error
+var normalized = ip.normalizeLax('0x7f.1'); // 127.0.0.1
+ip.isPrivate(normalized); // true
 ```
 
 ### License
 
+```txt
 This software is licensed under the MIT License.
 
+Copyright (c) 2024-present eggjs and other contributors.
 Copyright Fedor Indutny, 2012.
 
 Permission is hereby granted, free of charge, to any person obtaining a
@@ -88,3 +97,4 @@ NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
 DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
 OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
 USE OR OTHER DEALINGS IN THE SOFTWARE.
+```
