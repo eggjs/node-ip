@@ -84,6 +84,12 @@ var normalized = ip.normalizeLax('0x7f.1'); // 127.0.0.1
 ip.isPrivate(normalized); // true
 ```
 
+## Contributors
+
+[![Contributors](https://contrib.rocks/image?repo=eggjs/node-ip)](https://github.com/eggjs/node-ip/graphs/contributors)
+
+Made with [contributors-img](https://contrib.rocks).
+
 ### License
 
 ```txt

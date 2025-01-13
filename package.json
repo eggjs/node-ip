@@ -15,18 +15,23 @@
   },
   "files": [
     "lib",
+    "index.d.ts",
     "README.md"
   ],
   "main": "lib/ip",
+  "types": "index.d.ts",
   "devDependencies": {
+    "@types/node": "^22.10.5",
     "egg-bin": "^6.10.0",
-    "eslint": "^8.15.0"
+    "eslint": "^8.15.0",
+    "tsd": "^0.31.2"
   },
   "scripts": {
     "lint": "eslint lib test",
-    "test": "npm run lint && egg-bin test --ts false",
-    "fix": "npm run lint -- --fix",
-    "ci": "npm run lint && egg-bin cov --ts false"
+    "pretest": "npm run lint -- --fix && tsd",
+    "test": "egg-bin test --ts false",
+    "preci": "npm run lint && tsd",
+    "ci": "egg-bin cov --ts false"
   },
   "license": "MIT"
 }
